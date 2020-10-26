@@ -1,0 +1,79 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #3faf82;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hamburger {
+  height: 52px;
+  width: 80px;
+  cursor: pointer;
+  position: relative;
+}
+
+.line {
+  height: 8px;
+  width: 100%;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+}
+
+.top {
+  top: 0;
+  transition: top 0.35s ease 0.4s, transform 0.35s ease;
+}
+
+.middle {
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: visible;
+  transition: visibility 0s linear 0.4s, transform 0.35s ease 0.4s, opacity 0.35s ease 0.4s;
+}
+
+.bottom {
+  bottom: 0;
+  transition: bottom 0.35s ease 0.4s, transform 0.35s ease;
+}
+
+.active {
+  .top {
+    top: calc(50% - 4px);
+    transform: rotate(45deg);
+    transition: top 0.35s ease, transform 0.35s ease 0.4s;
+  }
+
+  .middle {
+    opacity: 0.8;
+    transform: translateY(-50%) scale(0.4);
+    visibility: hidden;
+    transition: visibility 0s linear 0.35s, transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  .bottom {
+    bottom: calc(50% - 4px);
+    transform: rotate(135deg);
+    transition: bottom 0.35s ease, transform 0.35s ease 0.4s;
+  }
+}
